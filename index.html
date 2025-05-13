@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Rima 🎂</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 7vw;
+      animation: glow 2s infinite alternate;
+      margin: 0;
+    }
+
+    .birthday-wish {
+      font-size: 4.5vw;
+      margin: 2vw 0;
+      font-weight: bold;
+    }
+
+    .wish-text {
+      background: linear-gradient(90deg, #8e2de2, #4a00e0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .heart {
+      position: relative;
+      width: 20vw;
+      height: 20vw;
+      background-color: red;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite;
+      margin: 4vw 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20vw;
+      height: 20vw;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10vw;
+      left: 0;
+    }
+
+    .heart::after {
+      top: 0;
+      left: 10vw;
+    }
+
+    h2 {
+      font-size: 4vw;
+    }
+
+    /* Glowing text */
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #ff0, 0 0 20px #f0f;
+      }
+      to {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.1) rotate(-45deg); }
+      100% { transform: scale(1) rotate(-45deg); }
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10px) rotateZ(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotateZ(360deg);
+      }
+    }
+
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 48px;
+      }
+      .birthday-wish {
+        font-size: 28px;
+      }
+      .heart {
+        width: 120px;
+        height: 120px;
+      }
+      .heart::before,
+      .heart::after {
+        width: 120px;
+        height: 120px;
+      }
+      .heart::before {
+        top: -60px;
+      }
+      .heart::after {
+        left: 60px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Happy Birthday Rima 🎉</h1>
+  <h2 class="birthday-wish">
+    <span class="wish-text">May your day be full of love, smiles, and joy</span> 💖
+  </h2>
+  <div class="heart"></div>
+  <h2>From:  💌</h2>
+
+  <script>
+    for (let i = 0; i < 150; i++) {
+      let confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = Math.random() * -100 + 'px';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      confetti.style.animationDelay = Math.random() * 3 + 's';
+      document.body.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>
